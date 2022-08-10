@@ -17,7 +17,20 @@ final class RegisterViewController: UIViewController {
         service.postUsers(user: user) { result in
             print(result)
         }
+        
+        buildLayout()
+    }
+    
+}
+
+extension RegisterViewController: ViewCoding {
+    func setupView() {
         view.backgroundColor = .white
     }
+    
+    func setupConstraints() { }
+    
+    func setupHierarchy() { }
+    
     
 }
