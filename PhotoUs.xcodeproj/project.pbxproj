@@ -20,6 +20,7 @@
 		DFD9036D28A29B2C007446AC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036C28A29B2C007446AC /* RegisterViewController.swift */; };
 		DFD9037028A29B91007446AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036F28A29B91007446AC /* API.swift */; };
 		DFD9037328A2A258007446AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9037228A2A258007446AC /* User.swift */; };
+		E3594D8B28A3E98500E53146 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3594D8A28A3E98500E53146 /* UserSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		DFD9036C28A29B2C007446AC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DFD9036F28A29B91007446AC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DFD9037228A2A258007446AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E3594D8A28A3E98500E53146 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		F996297208B3718BC651116A /* Pods-PhotoUs-PhotoUsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoUs-PhotoUsUITests/Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				DFD9037228A2A258007446AC /* User.swift */,
+				E3594D8A28A3E98500E53146 /* UserSession.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD9036D28A29B2C007446AC /* RegisterViewController.swift in Sources */,
+				E3594D8B28A3E98500E53146 /* UserSession.swift in Sources */,
 				DF0231DA28A286220038FB2B /* AppDelegate.swift in Sources */,
 				DFD9037028A29B91007446AC /* API.swift in Sources */,
 				DFD9037328A2A258007446AC /* User.swift in Sources */,
@@ -613,6 +617,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,6 +646,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
