@@ -15,7 +15,7 @@ final class Service {
     
     private var baseURL = "http://adaspace.local"
     
-    func postUsers(user: User, callback: @escaping (Result<Any, ServiceError>) -> Void) {
+    func postUser(user: User, callback: @escaping (Result<UserSession, ServiceError>) -> Void) {
         
         guard let url = URL(string: baseURL.appending("/users")) else {
             callback(.failure(.invalidURL))
@@ -29,8 +29,31 @@ final class Service {
             "Content-Type": "application/json"
         ]
         
+        request.httpBody = try? JSONEncoder().encode(user)
         
+        let task = URLSession.shared.dataTask(with: request){data,error,response in
+            
+        }
         
+        task.resume()
     }
     
+    func getPosts (callback:@escaping (Result<Any,ServiceError>) -> Void){
+        guard let url = URL(string: baseURL.appending("/posts")) else{
+            callback(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url:url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = [
+            "accept":"application/json"
+        ]
+        
+        let task = URLSession.shared.dataTask(with: request){data,response,error in
+            
+        }
+        
+        task.resume()
+    }
 }
