@@ -33,6 +33,12 @@ final class Service {
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
+            guard let data = data else {
+                callback(.failure(.network(error)))
+                return
+            }
+            
+            
             
         }
         
