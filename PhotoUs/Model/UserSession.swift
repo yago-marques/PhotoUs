@@ -7,16 +7,14 @@
 
 import Foundation
 
-struct UserSession {
+struct UserSession: Decodable {
     var token: String
     var user: UserFromSession
-    
 }
-struct UserFromSession{
+
+struct UserFromSession: Decodable {
     var id: String
     var name: String
     var email: String
-    var avatar: String
-    
-    
+    var avatar: String?
 }

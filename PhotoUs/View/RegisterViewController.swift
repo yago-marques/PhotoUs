@@ -10,7 +10,7 @@ import UIKit
 final class RegisterViewController: UIViewController {
     
     var service = Service()
-    let user = User(name: "thays", email: "thays@thays.com", password: "thays123")
+    let user = User(name: "thays", email: "thsavdhgvdhgv@thays.com", password: "thays123")
     
     override func viewDidLoad() {
         super.viewDidLoad()

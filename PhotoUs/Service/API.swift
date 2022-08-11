@@ -9,6 +9,9 @@ import UIKit
 
 enum ServiceError: Error {
     case invalidURL
+    case notFound
+    case noDecode
+    case invalidSession
 }
 
 final class Service {
@@ -31,14 +34,29 @@ final class Service {
         
         request.httpBody = try? JSONEncoder().encode(user)
         
-        let task = URLSession.shared.dataTask(with: request){data,error,response in
+        let task = URLSession.shared.dataTask(with: request) {data, error, response in
+            
+            guard let data = data else {
+                callback(.failure(.notFound))
+                return
+            }
+            
+            let userSession = try? JSONDecoder().decode(UserSession.self, from: data)
+            
+            guard let userSession = userSession else {
+                callback(.failure(.invalidSession))
+                return
+            }
+            
+            callback(.success(userSession))
+            
             
         }
         
         task.resume()
     }
     
-    func getPosts (callback:@escaping (Result<Any,ServiceError>) -> Void){
+    func getPosts (callback: @escaping (Result<[Post],ServiceError>) -> Void){
         guard let url = URL(string: baseURL.appending("/posts")) else{
             callback(.failure(.invalidURL))
             return
@@ -47,10 +65,22 @@ final class Service {
         var request = URLRequest(url:url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
-            "accept":"application/json"
+            "accept": "application/json"
         ]
         
-        let task = URLSession.shared.dataTask(with: request){data,response,error in
+        let task = URLSession.shared.dataTask(with: request){ data, response, error in
+            
+            guard let data = data else {
+                callback(.failure(.notFound))
+                return
+            }
+            
+            do {
+                let posts = try JSONDecoder().decode([Post].self, from: data)
+                callback(.success(posts))
+            } catch {
+                callback(.failure(.noDecode))
+            }
             
         }
         
