@@ -7,16 +7,20 @@
 
 import UIKit
 
-enum ServiceError: Error {
+enum BaseURL: String {
+    case locally = "http://127.0.0.1:8080"
+    case remotely = "http://adaspace.local"
+}
+
+enum APIError: Error {
     case invalidURL
+    case invalidEmail(Error?)
     case network(Error?)
 }
 
-final class Service {
+final class API {
     
-    private var baseURL = "http://adaspace.local"
-    
-    func postUsers(user: User, callback: @escaping (Result<Any, ServiceError>) -> Void) {
+    func postUser(user: User, callback: @escaping (Result<UserSession, APIError>) -> Void) {
         guard let url = getUrl(path: "/users") else {
             callback(.failure(.invalidURL))
             return
@@ -38,7 +42,12 @@ final class Service {
                 return
             }
             
-            
+            do {
+                let userSession = try JSONDecoder().decode(UserSession.self, from: data)
+                callback(.success(userSession))
+            } catch {
+                callback(.failure(.invalidEmail(error)))
+            }
             
         }
         
@@ -47,10 +56,10 @@ final class Service {
     
 }
 
-private extension Service {
+private extension API {
         
     private func getUrl(path: String, queries: [APIQuery] = []) -> URL? {
-        guard var components = URLComponents(string: baseURL) else {
+        guard var components = URLComponents(string: BaseURL.locally.rawValue) else {
             return nil
         }
         

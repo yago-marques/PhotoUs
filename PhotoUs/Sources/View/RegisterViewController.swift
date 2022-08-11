@@ -9,21 +9,39 @@ import UIKit
 
 final class RegisterViewController: UIViewController {
     
-    var service = Service()
-    let user = User(name: "yago", email: "yago@yago.com", password: "yago123")
+    private let viewModel = RegisterViewModel()
+    let user = User(name: "yaguin", email: "hfhgfsagh@gmail.com", password: "yago123")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        service.postUsers(user: user) { result in
-            print(result)
-        }
+        newUser(user)
         
         buildLayout()
     }
     
 }
 
+private extension RegisterViewController {
+    
+    private func newUser(_ user: User) {
+        
+        viewModel.registerNewUser(user) { result in
+            switch result {
+            case let .success(session):
+                print(session.token)
+                // persistir token
+            case let .failure(error):
+                print(error.localizedDescription)
+                // provavelmente email inválido
+            }
+        }
+    
+    }
+    
+}
+
 extension RegisterViewController: ViewCoding {
+    
     func setupView() {
         view.backgroundColor = .white
     }
@@ -31,6 +49,5 @@ extension RegisterViewController: ViewCoding {
     func setupConstraints() { }
     
     func setupHierarchy() { }
-    
     
 }

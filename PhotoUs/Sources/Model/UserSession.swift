@@ -11,10 +11,10 @@ struct UserFromSession: Codable {
     let id: String
     let name: String
     let email: String
-    let avatar: String
+    let avatar: String?
 }
 
 struct UserSession: Codable {
-    let token: String
+    var token: String
     let user: UserFromSession
 }
