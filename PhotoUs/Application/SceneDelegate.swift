@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let safeWindow = UIWindow(windowScene: windowScene)
         safeWindow.makeKeyAndVisible()
         safeWindow.frame = UIScreen.main.bounds
-        safeWindow.rootViewController = RegisterViewController()
+        safeWindow.rootViewController = UINavigationController(rootViewController: LoginViewController())
         
         self.window = safeWindow
     }

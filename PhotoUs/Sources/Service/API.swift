@@ -7,33 +7,22 @@
 
 import UIKit
 
-enum BaseURL: String {
-    case locally = "http://127.0.0.1:8080"
-    case remotely = "http://adaspace.local"
-}
-
-enum APIError: Error {
-    case invalidURL
-    case invalidEmail(Error?)
-    case network(Error?)
-}
-
 final class API {
-    
-    func postUser(user: User, callback: @escaping (Result<UserSession, APIError>) -> Void) {
+            
+    static func postUser(user: User, callback: @escaping (Result<UserSession, APIError>) -> Void) {
         guard let url = getUrl(path: "/users") else {
             callback(.failure(.invalidURL))
             return
         }
-        let bodyRequest: Data = try! JSONEncoder().encode(user)
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = [
+        let body: Data = try! JSONEncoder().encode(user)
+        
+        let headers = [
             "accept": "application/json",
             "Content-Type": "application/json"
         ]
-        request.httpBody = bodyRequest
+        
+        let request = getRequest(url: url, method: .post, headers: headers, body: body)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
@@ -58,7 +47,7 @@ final class API {
 
 private extension API {
         
-    private func getUrl(path: String, queries: [APIQuery] = []) -> URL? {
+    static private func getUrl(path: String, queries: [APIQuery] = []) -> URL? {
         guard var components = URLComponents(string: BaseURL.locally.rawValue) else {
             return nil
         }
@@ -76,6 +65,22 @@ private extension API {
         components.queryItems = queries
         
         return components.url
+    }
+    
+    static private func getRequest(
+        url: URL,
+        method: HTTPMethods = .get,
+        headers: [String: String] = ["accept": "application/json"],
+        body: Data? = nil
+    ) -> URLRequest {
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.allHTTPHeaderFields = headers
+        request.httpBody = body
+        
+        return request
+        
     }
     
 }

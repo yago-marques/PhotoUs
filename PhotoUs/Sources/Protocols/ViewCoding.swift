@@ -16,7 +16,7 @@ protocol ViewCoding {
 extension ViewCoding {
     func buildLayout() {
         setupView()
-        setupConstraints()
         setupHierarchy()
+        setupConstraints()
     }
 }

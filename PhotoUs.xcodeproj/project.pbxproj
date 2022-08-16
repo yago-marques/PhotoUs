@@ -20,6 +20,17 @@
 		DF508FCB28A3CA69003B7B0A /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */; };
 		DF5CB09628A3DE5200749DDC /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB09528A3DE5200749DDC /* UserSession.swift */; };
 		DF5CB09828A4336D00749DDC /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */; };
+		DF5CB09C28A6985B00749DDC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB09B28A6985B00749DDC /* Keychain.swift */; };
+		DF5CB0A128A69F8C00749DDC /* APIEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0A028A69F8C00749DDC /* APIEnums.swift */; };
+		DF5CB0A328A6A34300749DDC /* KeychainEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0A228A6A34300749DDC /* KeychainEnums.swift */; };
+		DF5CB0A528A6B32E00749DDC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0A428A6B32E00749DDC /* LoginViewModel.swift */; };
+		DF5CB0A928A6B54700749DDC /* AppIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0A828A6B54700749DDC /* AppIdentifiers.swift */; };
+		DF5CB0AB28AA757700749DDC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0AA28AA757700749DDC /* LoginViewController.swift */; };
+		DF5CB0AF28AA877F00749DDC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0AE28AA877F00749DDC /* CustomTextField.swift */; };
+		DF5CB0B128AAA81F00749DDC /* LoginFieldsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0B028AAA81F00749DDC /* LoginFieldsComponent.swift */; };
+		DF5CB0B328AABC9C00749DDC /* LoginViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0B228AABC9C00749DDC /* LoginViewControllerDelegate.swift */; };
+		DF5CB0B528AADA9F00749DDC /* RegisterHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0B428AADA9F00749DDC /* RegisterHeaderComponent.swift */; };
+		DF5CB0B728AAEF2100749DDC /* RegisterFormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB0B628AAEF2100749DDC /* RegisterFormComponent.swift */; };
 		DF8B39C128A32B4E00C3835D /* APIQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B39C028A32B4E00C3835D /* APIQuery.swift */; };
 		DFD9036D28A29B2C007446AC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036C28A29B2C007446AC /* RegisterViewController.swift */; };
 		DFD9037028A29B91007446AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036F28A29B91007446AC /* API.swift */; };
@@ -66,6 +77,17 @@
 		DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
 		DF5CB09528A3DE5200749DDC /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewModel.swift; path = PhotoUs/Sources/Model/RegisterViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DF5CB09B28A6985B00749DDC /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		DF5CB0A028A69F8C00749DDC /* APIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnums.swift; sourceTree = "<group>"; };
+		DF5CB0A228A6A34300749DDC /* KeychainEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainEnums.swift; sourceTree = "<group>"; };
+		DF5CB0A428A6B32E00749DDC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = PhotoUs/Sources/Enums/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DF5CB0A828A6B54700749DDC /* AppIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIdentifiers.swift; sourceTree = "<group>"; };
+		DF5CB0AA28AA757700749DDC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DF5CB0AE28AA877F00749DDC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DF5CB0B028AAA81F00749DDC /* LoginFieldsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFieldsComponent.swift; sourceTree = "<group>"; };
+		DF5CB0B228AABC9C00749DDC /* LoginViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerDelegate.swift; sourceTree = "<group>"; };
+		DF5CB0B428AADA9F00749DDC /* RegisterHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterHeaderComponent.swift; sourceTree = "<group>"; };
+		DF5CB0B628AAEF2100749DDC /* RegisterFormComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormComponent.swift; sourceTree = "<group>"; };
 		DF8B39C028A32B4E00C3835D /* APIQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIQuery.swift; sourceTree = "<group>"; };
 		DFD9036C28A29B2C007446AC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DFD9036F28A29B91007446AC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -179,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				DFD9036C28A29B2C007446AC /* RegisterViewController.swift */,
+				DF5CB0AA28AA757700749DDC /* LoginViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,18 +210,42 @@
 			isa = PBXGroup;
 			children = (
 				DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */,
+				DF5CB0B228AABC9C00749DDC /* LoginViewControllerDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DF5CB09F28A69F6B00749DDC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DF5CB0A028A69F8C00749DDC /* APIEnums.swift */,
+				DF5CB0A228A6A34300749DDC /* KeychainEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		DF5CB0AD28AA874100749DDC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DF5CB0AE28AA877F00749DDC /* CustomTextField.swift */,
+				DF5CB0B028AAA81F00749DDC /* LoginFieldsComponent.swift */,
+				DF5CB0B428AADA9F00749DDC /* RegisterHeaderComponent.swift */,
+				DF5CB0B628AAEF2100749DDC /* RegisterFormComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		DF8B39BC28A328A800C3835D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DF5CB0AD28AA874100749DDC /* Components */,
+				DF5CB09F28A69F6B00749DDC /* Enums */,
 				DF508FC928A3CA54003B7B0A /* Protocols */,
 				DFD9036E28A29B82007446AC /* Service */,
 				DFD9037128A2A24C007446AC /* Model */,
 				DF02320928A287900038FB2B /* View */,
 				DF8B39BF28A32ADB00C3835D /* ViewModel */,
+				DF5CB0A828A6B54700749DDC /* AppIdentifiers.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -224,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */,
+				DF5CB0A428A6B32E00749DDC /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				DFD9036F28A29B91007446AC /* API.swift */,
+				DF5CB09B28A6985B00749DDC /* Keychain.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -486,13 +535,24 @@
 			files = (
 				DFD9036D28A29B2C007446AC /* RegisterViewController.swift in Sources */,
 				DF8B39C128A32B4E00C3835D /* APIQuery.swift in Sources */,
+				DF5CB0A928A6B54700749DDC /* AppIdentifiers.swift in Sources */,
+				DF5CB0B528AADA9F00749DDC /* RegisterHeaderComponent.swift in Sources */,
+				DF5CB0AB28AA757700749DDC /* LoginViewController.swift in Sources */,
+				DF5CB0AF28AA877F00749DDC /* CustomTextField.swift in Sources */,
+				DF5CB0A328A6A34300749DDC /* KeychainEnums.swift in Sources */,
 				DF0231DA28A286220038FB2B /* AppDelegate.swift in Sources */,
+				DF5CB0B128AAA81F00749DDC /* LoginFieldsComponent.swift in Sources */,
 				DFD9037028A29B91007446AC /* API.swift in Sources */,
 				DF508FCB28A3CA69003B7B0A /* ViewCoding.swift in Sources */,
 				DFD9037328A2A258007446AC /* User.swift in Sources */,
+				DF5CB0A128A69F8C00749DDC /* APIEnums.swift in Sources */,
+				DF5CB0A528A6B32E00749DDC /* LoginViewModel.swift in Sources */,
+				DF5CB0B728AAEF2100749DDC /* RegisterFormComponent.swift in Sources */,
 				DF0231DC28A286220038FB2B /* SceneDelegate.swift in Sources */,
 				DF5CB09828A4336D00749DDC /* RegisterViewModel.swift in Sources */,
+				DF5CB0B328AABC9C00749DDC /* LoginViewControllerDelegate.swift in Sources */,
 				DF5CB09628A3DE5200749DDC /* UserSession.swift in Sources */,
+				DF5CB09C28A6985B00749DDC /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

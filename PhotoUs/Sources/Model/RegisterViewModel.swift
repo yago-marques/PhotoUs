@@ -11,15 +11,14 @@ final class RegisterViewModel {
     
     var userSession: UserSession?
     
-    private let api = API()
-    
     func registerNewUser(_ user: User, callback: @escaping (Result<UserSession, APIError>) -> Void) {
         do {
-            api.postUser(user: user) { result in
+            API.postUser(user: user) { result in
                 DispatchQueue.main.async {
                     switch result {
                     case let .success(userSession):
                         self.userSession = userSession
+                        self.guardToken(with: userSession)
                         callback(.success(userSession))
                     case let .failure(error):
                         print(error.localizedDescription)
@@ -27,6 +26,25 @@ final class RegisterViewModel {
                     }
                 }
             }
+        }
+    }
+    
+}
+
+private extension RegisterViewModel {
+    
+    private func guardToken(with session: UserSession) {
+        
+        guard let userSession = try? JSONEncoder().encode(session) else { return }
+        
+        do {
+            try Keychain.create(
+                session: userSession,
+                service: AppIdentifiers.bundleID,
+                account: AppIdentifiers.bundleID
+            )
+        } catch {
+            print(error)
         }
     }
     
