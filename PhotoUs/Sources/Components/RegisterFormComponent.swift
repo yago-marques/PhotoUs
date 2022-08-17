@@ -9,6 +9,8 @@ import UIKit
 
 final class RegisterFormComponent: UIView {
     
+    let delegate: RegisterViewControllerDelegate?
+    
     lazy var usernameTextField: CustomTextField = {
         let textField = CustomTextField(placeholder: "Nome de usuário")
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -34,10 +36,12 @@ final class RegisterFormComponent: UIView {
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(newUser), for: .touchUpInside)
         return button
     }()
     
-    init() {
+    init(delegate: RegisterViewControllerDelegate) {
+        self.delegate = delegate
         super.init(frame: .zero)
         
         buildLayout()
@@ -47,6 +51,15 @@ final class RegisterFormComponent: UIView {
         fatalError("error - RegisterFormComponent")
     }
     
+}
+
+private extension RegisterFormComponent {
+    @objc private func newUser() {
+        self.delegate?.newUser(
+            name: usernameTextField.myTextField,
+            email: emailTextField.myTextField,
+            password: passwordTextField.myTextField)
+    }
 }
 
 extension RegisterFormComponent: ViewCoding {

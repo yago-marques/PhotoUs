@@ -35,6 +35,7 @@
 		DFD9036D28A29B2C007446AC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036C28A29B2C007446AC /* RegisterViewController.swift */; };
 		DFD9037028A29B91007446AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036F28A29B91007446AC /* API.swift */; };
 		DFD9037328A2A258007446AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9037228A2A258007446AC /* User.swift */; };
+		DFEA1D7A28AC2844006C8ECF /* RegisterViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		DFD9036C28A29B2C007446AC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DFD9036F28A29B91007446AC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DFD9037228A2A258007446AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F996297208B3718BC651116A /* Pods-PhotoUs-PhotoUsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoUs-PhotoUsUITests/Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 			children = (
 				DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */,
 				DF5CB0B228AABC9C00749DDC /* LoginViewControllerDelegate.swift */,
+				DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				DF5CB0B328AABC9C00749DDC /* LoginViewControllerDelegate.swift in Sources */,
 				DF5CB09628A3DE5200749DDC /* UserSession.swift in Sources */,
 				DF5CB09C28A6985B00749DDC /* Keychain.swift in Sources */,
+				DFEA1D7A28AC2844006C8ECF /* RegisterViewControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

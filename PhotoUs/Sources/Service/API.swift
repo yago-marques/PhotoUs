@@ -43,6 +43,36 @@ final class API {
         task.resume()
     }
     
+    static func login(email: String, password: String, callback: @escaping (Result<UserSession, APIError>) -> Void) {
+        
+        guard let url = getUrl(path: "/users/login") else {
+            callback(.failure(.invalidURL))
+            return
+        }
+        
+        var request = getRequest(url: url, method: .post)
+        let authData = (email + ":" + password).data(using: .utf8)!.base64EncodedString()
+        request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                callback(.failure(.network(error)))
+                return
+            }
+            
+            do {
+                let session = try JSONDecoder().decode(UserSession.self, from: data)
+                callback(.success(session))
+            } catch {
+                callback(.failure(.invalidEmail(error)))
+            }
+
+        }
+        
+        task.resume()
+        
+    }
+    
 }
 
 private extension API {

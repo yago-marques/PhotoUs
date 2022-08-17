@@ -18,7 +18,7 @@ final class RegisterViewController: UIViewController {
     }()
     
     private lazy var formView: RegisterFormComponent = {
-        let form = RegisterFormComponent()
+        let form = RegisterFormComponent(delegate: self)
         form.translatesAutoresizingMaskIntoConstraints = false
         form.layer.cornerRadius = 10
         return form
@@ -33,24 +33,21 @@ final class RegisterViewController: UIViewController {
 }
 
 private extension RegisterViewController {
-    
-    private func newUser(_ user: User) {
-
-        viewModel.registerNewUser(user) { result in
-            switch result {
-            case let .success(session):
-                print(session.token)
-            case let .failure(error):
-                print(error.localizedDescription)
-            }
-        }
-    
-    }
-    
     @objc private func backToLogin() {
         navigationController?.popViewController(animated: false)
     }
-    
+}
+
+extension RegisterViewController: RegisterViewControllerDelegate {
+    @objc func newUser(name: UITextField, email: UITextField, password: UITextField) {
+        viewModel.registerNewUser(
+            nameTextField: name,
+            emailTextField: email,
+            passwordTextField: password
+        ) { result in
+            
+        }
+    }
 }
 
 extension RegisterViewController: ViewCoding {

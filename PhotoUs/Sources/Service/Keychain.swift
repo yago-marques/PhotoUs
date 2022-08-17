@@ -8,7 +8,7 @@
 import Foundation
 
 final class Keychain {
-    
+        
     static func create(session: Data, service: String, account: String) throws {
         
         if Keychain.hasSession() {
@@ -41,7 +41,7 @@ final class Keychain {
         }
         
     }
-    
+        
     static func read(service: String, account: String) throws -> UserSession? {
         let query: [String: AnyObject] = [
             kSecAttrService as String: service as AnyObject,
@@ -122,6 +122,21 @@ final class Keychain {
         }
         
         return false
+    }
+    
+    static func guardSession(_ session: UserSession) {
+        
+        guard let userSession = try? JSONEncoder().encode(session) else { return }
+        
+        do {
+            try Keychain.create(
+                session: userSession,
+                service: AppIdentifiers.bundleID,
+                account: AppIdentifiers.bundleID
+            )
+        } catch {
+            print(error)
+        }
     }
     
 }

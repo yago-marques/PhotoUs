@@ -31,6 +31,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         verifySession()
+        
         buildLayout()
     }
     
@@ -85,6 +86,12 @@ extension LoginViewController: LoginViewControllerDelegate {
     
     @objc func goToRegisterView() {
         navigationController?.pushViewController(RegisterViewController(), animated: true)
+    }
+    
+    @objc func userLogin(email: UITextField, password: UITextField) {
+        viewModel.login(emailTextField: email, passwordTextField: password) { result in
+            
+        }
     }
     
 }

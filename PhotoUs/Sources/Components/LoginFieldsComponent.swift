@@ -18,12 +18,12 @@ final class LoginFieldsComponent: UIView {
         return label
     }()
     
-    private lazy var usernameTextField: UIView = {
-        let textField = CustomTextField(placeholder: "Nome de usuário")
+    private lazy var emailTextField: CustomTextField = {
+        let textField = CustomTextField(placeholder: "Email")
         return textField
     }()
     
-    private lazy var passwordTextField: UIView = {
+    private lazy var passwordTextField: CustomTextField = {
         let textField = CustomTextField(placeholder: "Senha")
         return textField
     }()
@@ -50,6 +50,7 @@ final class LoginFieldsComponent: UIView {
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(login), for: .touchUpInside)
         return button
     }()
     
@@ -79,6 +80,10 @@ private extension LoginFieldsComponent {
     @objc private func toRegister() {
         self.delegate?.goToRegisterView()
     }
+    
+    @objc private func login() {
+        self.delegate?.userLogin(email: self.emailTextField.myTextField, password: self.passwordTextField.myTextField)
+    }
 }
 
 extension LoginFieldsComponent: ViewCoding {
@@ -94,12 +99,12 @@ extension LoginFieldsComponent: ViewCoding {
             loginLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             loginLabel.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.1),
             
-            usernameTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 10),
-            usernameTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            usernameTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            usernameTextField.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.15),
+            emailTextField.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 10),
+            emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            emailTextField.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.15),
             
-            passwordTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 10),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
             passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             passwordTextField.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.15),
@@ -121,7 +126,7 @@ extension LoginFieldsComponent: ViewCoding {
     
     func setupHierarchy() {
         self.addSubview(loginLabel)
-        self.addSubview(usernameTextField)
+        self.addSubview(emailTextField)
         self.addSubview(passwordTextField)
         self.addSubview(loginButton)
         self.addSubview(withoutAccountLabel)
