@@ -22,6 +22,7 @@
 		DFD9037028A29B91007446AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036F28A29B91007446AC /* API.swift */; };
 		DFD9037328A2A258007446AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9037228A2A258007446AC /* User.swift */; };
 		E3594D8B28A3E98500E53146 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3594D8A28A3E98500E53146 /* UserSession.swift */; };
+		E3B01E5928ABBBC500186E37 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B01E5828ABBBC500186E37 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		DFD9036F28A29B91007446AC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DFD9037228A2A258007446AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E3594D8A28A3E98500E53146 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		E3B01E5828ABBBC500186E37 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F996297208B3718BC651116A /* Pods-PhotoUs-PhotoUsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoUs-PhotoUsUITests/Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				DFD9036F28A29B91007446AC /* API.swift */,
+				E3B01E5828ABBBC500186E37 /* Keychain.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				DF0231DA28A286220038FB2B /* AppDelegate.swift in Sources */,
 				DFD9037028A29B91007446AC /* API.swift in Sources */,
 				DFD9037328A2A258007446AC /* User.swift in Sources */,
+				E3B01E5928ABBBC500186E37 /* Keychain.swift in Sources */,
 				DF5CB09A28A5266800749DDC /* Post.swift in Sources */,
 				DF0231DC28A286220038FB2B /* SceneDelegate.swift in Sources */,
 			);

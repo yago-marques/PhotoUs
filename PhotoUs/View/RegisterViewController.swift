@@ -10,12 +10,26 @@ import UIKit
 final class RegisterViewController: UIViewController {
     
     var service = Service()
-    let user = User(name: "thays", email: "thsavdhgvdhgv@thays.com", password: "thays123")
+    let user = User(name: "mariazinha", email: "maria@maria.com", password: "senha123")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         service.postUser(user: user) { result in
-            print(result)
+            switch result{
+            case let .success(session):
+                let token = Data(session.token.utf8)
+                let bundleId = Bundle.main.bundleIdentifier!
+                
+                do {
+                    try Keychain.save (token: token, service: bundleId, account: bundleId)
+                }catch{
+                    print(error)
+                }
+            case let .failure(error):
+                print(error)
+            }
+            
+            
         }
         view.backgroundColor = .white
     }
