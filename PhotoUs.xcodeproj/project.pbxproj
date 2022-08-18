@@ -36,6 +36,7 @@
 		DFD9037028A29B91007446AC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9036F28A29B91007446AC /* API.swift */; };
 		DFD9037328A2A258007446AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9037228A2A258007446AC /* User.swift */; };
 		DFEA1D7A28AC2844006C8ECF /* RegisterViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */; };
+		DFEA1D8328AD7E26006C8ECF /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D8228AD7E26006C8ECF /* PostsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,11 +78,11 @@
 		DF0231FC28A286220038FB2B /* PhotoUsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
 		DF5CB09528A3DE5200749DDC /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
-		DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewModel.swift; path = PhotoUs/Sources/Model/RegisterViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewModel.swift; path = PhotoUs/Sources/ViewModel/RegisterViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DF5CB09B28A6985B00749DDC /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		DF5CB0A028A69F8C00749DDC /* APIEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnums.swift; sourceTree = "<group>"; };
 		DF5CB0A228A6A34300749DDC /* KeychainEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainEnums.swift; sourceTree = "<group>"; };
-		DF5CB0A428A6B32E00749DDC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = PhotoUs/Sources/Enums/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DF5CB0A428A6B32E00749DDC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = PhotoUs/Sources/ViewModel/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DF5CB0A828A6B54700749DDC /* AppIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIdentifiers.swift; sourceTree = "<group>"; };
 		DF5CB0AA28AA757700749DDC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DF5CB0AE28AA877F00749DDC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		DFD9036F28A29B91007446AC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DFD9037228A2A258007446AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerDelegate.swift; sourceTree = "<group>"; };
+		DFEA1D8228AD7E26006C8ECF /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		F996297208B3718BC651116A /* Pods-PhotoUs-PhotoUsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoUs-PhotoUsUITests/Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,8 +204,10 @@
 		DF02320928A287900038FB2B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF5CB0AD28AA874100749DDC /* Components */,
 				DFD9036C28A29B2C007446AC /* RegisterViewController.swift */,
 				DF5CB0AA28AA757700749DDC /* LoginViewController.swift */,
+				DFEA1D8228AD7E26006C8ECF /* PostsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,7 +245,6 @@
 		DF8B39BC28A328A800C3835D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				DF5CB0AD28AA874100749DDC /* Components */,
 				DF5CB09F28A69F6B00749DDC /* Enums */,
 				DF508FC928A3CA54003B7B0A /* Protocols */,
 				DFD9036E28A29B82007446AC /* Service */,
@@ -552,6 +555,7 @@
 				DF5CB0A528A6B32E00749DDC /* LoginViewModel.swift in Sources */,
 				DF5CB0B728AAEF2100749DDC /* RegisterFormComponent.swift in Sources */,
 				DF0231DC28A286220038FB2B /* SceneDelegate.swift in Sources */,
+				DFEA1D8328AD7E26006C8ECF /* PostsViewController.swift in Sources */,
 				DF5CB09828A4336D00749DDC /* RegisterViewModel.swift in Sources */,
 				DF5CB0B328AABC9C00749DDC /* LoginViewControllerDelegate.swift in Sources */,
 				DF5CB09628A3DE5200749DDC /* UserSession.swift in Sources */,

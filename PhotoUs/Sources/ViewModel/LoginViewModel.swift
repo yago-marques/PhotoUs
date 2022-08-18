@@ -10,6 +10,8 @@ import UIKit
 
 final class LoginViewModel {
     
+    // API como dependencia para testar (Sugiro URLProtocol)
+    
     var userSession: UserSession?
     
     func trySession() -> UserSession? {
@@ -28,29 +30,20 @@ final class LoginViewModel {
     }
     
     func login(
-        emailTextField: UITextField,
-        passwordTextField: UITextField,
+        email: String,
+        password: String,
         callback: @escaping (Result<UserSession, APIError>) -> Void
-
     ) {
-        
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
-        
         API.login(email: email, password: password) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case let .success(session):
-                    self.userSession = session
-                    Keychain.guardSession(session)
-                    callback(.success(session))
-                    print("logado")
-                case let .failure(error):
-                    callback(.failure(error))
-                }
+            switch result {
+            case let .success(session):
+                self.userSession = session
+                Keychain.createSession(session)
+                callback(.success(session))
+                print("logado")
+            case let .failure(error):
+                callback(.failure(error))
             }
         }
-        
     }
-    
 }

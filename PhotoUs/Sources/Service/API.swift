@@ -7,8 +7,12 @@
 
 import UIKit
 
+// Adaptar pra testar!! Não será estatica
+
 final class API {
             
+    // Mudar pra ser um POST que recebe URL (ou URLComponents), Header, Body, etc.
+    // Olhar como fazer nos testes!
     static func postUser(user: User, callback: @escaping (Result<UserSession, APIError>) -> Void) {
         guard let url = getUrl(path: "/users") else {
             callback(.failure(.invalidURL))

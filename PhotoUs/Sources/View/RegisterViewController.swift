@@ -7,10 +7,21 @@
 
 import UIKit
 
+// Mesmas mudanças da LoginViewController
+
 final class RegisterViewController: UIViewController {
     
-    private let viewModel = RegisterViewModel()
+    private let viewModel: RegisterViewModel
     
+    init(viewModel: RegisterViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Error - RegisterViewController")
+    }
+        
     private lazy var headerView: RegisterHeaderComponent = {
         let header = RegisterHeaderComponent()
         header.translatesAutoresizingMaskIntoConstraints = false
@@ -33,19 +44,22 @@ final class RegisterViewController: UIViewController {
 }
 
 private extension RegisterViewController {
-    @objc private func backToLogin() {
+    private func backToLogin() {
         navigationController?.popViewController(animated: false)
     }
 }
 
 extension RegisterViewController: RegisterViewControllerDelegate {
-    @objc func newUser(name: UITextField, email: UITextField, password: UITextField) {
+
+    func newUser(name: UITextField, email: UITextField, password: UITextField) {
         viewModel.registerNewUser(
             nameTextField: name,
             emailTextField: email,
             passwordTextField: password
         ) { result in
-            
+            DispatchQueue.main.async {
+                //Alterando View
+            }
         }
     }
 }

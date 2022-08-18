@@ -11,6 +11,7 @@ final class RegisterViewModel {
     
     var userSession: UserSession?
     
+    // Mudar pra String :D
     func registerNewUser(
         nameTextField: UITextField,
         emailTextField: UITextField,
@@ -25,17 +26,15 @@ final class RegisterViewModel {
         
         do {
             API.postUser(user: user) { result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case let .success(userSession):
-                        self.userSession = userSession
-                        Keychain.guardSession(userSession)
-                        callback(.success(userSession))
-                        print("cadastrado")
-                    case let .failure(error):
-                        print(error.localizedDescription)
-                        callback(.failure(.invalidEmail(error)))
-                    }
+                switch result {
+                case let .success(userSession):
+                    self.userSession = userSession
+                    Keychain.createSession(userSession)
+                    callback(.success(userSession))
+                    print("cadastrado")
+                case let .failure(error):
+                    print(error.localizedDescription)
+                    callback(.failure(.invalidEmail(error)))
                 }
             }
         }

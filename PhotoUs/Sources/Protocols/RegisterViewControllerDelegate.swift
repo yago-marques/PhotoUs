@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol RegisterViewControllerDelegate {
+protocol RegisterViewControllerDelegate: AnyObject {
     func newUser(name: UITextField, email: UITextField, password: UITextField)
 }

@@ -8,8 +8,17 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
+        
+    private let viewModel: LoginViewModel
     
-    private let viewModel = LoginViewModel()
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Error - LoginViewController")
+    }
     
     private lazy var background: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -41,17 +50,11 @@ private extension LoginViewController {
     
     private func verifySession() {
         if let _ = viewModel.trySession() {
-            navigationController?.pushViewController(RegisterViewController(), animated: true)
+            print("here")
+            navigationController?.pushViewController(RegisterViewController(viewModel: RegisterViewModel()), animated: true)
+        } else {
+            print("aqui")
         }
-    }
-    
-    private func getLabel(text: String) -> UILabel {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.text = text
-        
-        return label
     }
     
 }
@@ -84,13 +87,24 @@ extension LoginViewController: ViewCoding {
 
 extension LoginViewController: LoginViewControllerDelegate {
     
-    @objc func goToRegisterView() {
-        navigationController?.pushViewController(RegisterViewController(), animated: true)
+    func goToRegisterView() {
+        navigationController?.pushViewController(RegisterViewController(viewModel: RegisterViewModel()), animated: true)
     }
     
-    @objc func userLogin(email: UITextField, password: UITextField) {
-        viewModel.login(emailTextField: email, passwordTextField: password) { result in
-            
+    func userLogin(email: String?, password: String?) {
+        guard
+            let email = email,
+            let password = password,
+            email != "",
+            password != ""
+        else {
+            return
+        }
+        
+        viewModel.login(email: email, password: password) { result in
+            DispatchQueue.main.async {
+                //Alterando View
+            }
         }
     }
     

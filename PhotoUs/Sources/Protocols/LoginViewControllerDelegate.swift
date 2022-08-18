@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol LoginViewControllerDelegate {
+protocol LoginViewControllerDelegate: AnyObject {
     func goToRegisterView()
-    func userLogin(email: UITextField, password: UITextField)
+    func userLogin(email: String?, password: String?)
 }

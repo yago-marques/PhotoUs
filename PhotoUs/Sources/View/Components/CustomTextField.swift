@@ -9,9 +9,9 @@ import UIKit
 
 final class CustomTextField: UIView {
     
-    var placeholder: String
-    var lineColor: UIColor
-    var lineWidth: Double
+    private var placeholder: String
+    private var lineColor: UIColor
+    private var lineWidth: Double
     
     lazy var myTextField: UITextField = {
         let textField = UITextField(frame: .zero)
@@ -25,7 +25,7 @@ final class CustomTextField: UIView {
         return textField
     }()
     
-    lazy var textFieldLine: UIView = {
+    private lazy var textFieldLine: UIView = {
         let line = UIView(frame: .zero)
         line.translatesAutoresizingMaskIntoConstraints = false
         line.backgroundColor = self.lineColor

@@ -9,7 +9,9 @@ import UIKit
 
 final class LoginFieldsComponent: UIView {
     
-    let delegate: LoginViewControllerDelegate?
+    // ARC, Retain Cycles, Memory Leaks
+    // LoginViewController -> LoginFieldComponent -> LoginViewController
+    weak var delegate: LoginViewControllerDelegate?
     
     private lazy var loginLabel: UILabel = {
         let label = getLabel(text: "PhotoUs - Login")
@@ -54,7 +56,7 @@ final class LoginFieldsComponent: UIView {
         return button
     }()
     
-    init(delegate: LoginViewControllerDelegate) {
+    init(delegate: LoginViewControllerDelegate?) {
         self.delegate = delegate
         super.init(frame: .zero)
         
@@ -82,7 +84,7 @@ private extension LoginFieldsComponent {
     }
     
     @objc private func login() {
-        self.delegate?.userLogin(email: self.emailTextField.myTextField, password: self.passwordTextField.myTextField)
+        self.delegate?.userLogin(email: self.emailTextField.myTextField.text, password: self.passwordTextField.myTextField.text)
     }
 }
 

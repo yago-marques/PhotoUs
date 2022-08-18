@@ -21,6 +21,7 @@ final class Keychain {
             
         } else {
             
+            // Abstrair em uma função
             let query: [String: AnyObject] = [
                 kSecAttrService as String: service as AnyObject,
                 kSecAttrAccount as String: account as AnyObject,
@@ -124,7 +125,7 @@ final class Keychain {
         return false
     }
     
-    static func guardSession(_ session: UserSession) {
+    static func createSession(_ session: UserSession) {
         
         guard let userSession = try? JSONEncoder().encode(session) else { return }
         

@@ -9,7 +9,7 @@ import UIKit
 
 final class RegisterFormComponent: UIView {
     
-    let delegate: RegisterViewControllerDelegate?
+    weak var delegate: RegisterViewControllerDelegate?
     
     lazy var usernameTextField: CustomTextField = {
         let textField = CustomTextField(placeholder: "Nome de usuário")
