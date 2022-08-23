@@ -51,14 +51,19 @@ private extension RegisterViewController {
 
 extension RegisterViewController: RegisterViewControllerDelegate {
 
-    func newUser(name: UITextField, email: UITextField, password: UITextField) {
+    func newUser(name: String, email: String, password: String) {
         viewModel.registerNewUser(
-            nameTextField: name,
-            emailTextField: email,
-            passwordTextField: password
+            name: name,
+            email: email,
+            password: password
         ) { result in
             DispatchQueue.main.async {
-                //Alterando View
+                switch result {
+                case let .success(session):
+                    self.navigationController?.pushViewController(MainTabBarController(session: session), animated: true)
+                case let .failure(error):
+                    print(error)
+                }
             }
         }
     }

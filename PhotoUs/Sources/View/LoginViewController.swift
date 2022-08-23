@@ -49,11 +49,8 @@ final class LoginViewController: UIViewController {
 private extension LoginViewController {
     
     private func verifySession() {
-        if let _ = viewModel.trySession() {
-            print("here")
-            navigationController?.pushViewController(RegisterViewController(viewModel: RegisterViewModel()), animated: true)
-        } else {
-            print("aqui")
+        if let session = viewModel.trySession() {
+            navigationController?.pushViewController(MainTabBarController(session: session), animated: true)
         }
     }
     
@@ -88,7 +85,7 @@ extension LoginViewController: ViewCoding {
 extension LoginViewController: LoginViewControllerDelegate {
     
     func goToRegisterView() {
-        navigationController?.pushViewController(RegisterViewController(viewModel: RegisterViewModel()), animated: true)
+        navigationController?.pushViewController(RegisterViewController(viewModel: RegisterViewModel(api: API(), delegate: viewModel)), animated: true)
     }
     
     func userLogin(email: String?, password: String?) {
@@ -103,7 +100,15 @@ extension LoginViewController: LoginViewControllerDelegate {
         
         viewModel.login(email: email, password: password) { result in
             DispatchQueue.main.async {
-                //Alterando View
+                DispatchQueue.main.async {
+                    switch result {
+                    case let .failure(error):
+                        // mostrar alerta
+                        print(error)
+                    case let .success(session):
+                        self.navigationController?.pushViewController(MainTabBarController(session: session), animated: true)
+                    }
+                }
             }
         }
     }

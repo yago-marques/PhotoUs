@@ -56,9 +56,10 @@ final class RegisterFormComponent: UIView {
 private extension RegisterFormComponent {
     @objc private func newUser() {
         self.delegate?.newUser(
-            name: usernameTextField.myTextField,
-            email: emailTextField.myTextField,
-            password: passwordTextField.myTextField)
+            name: usernameTextField.myTextField.text!,
+            email: emailTextField.myTextField.text!,
+            password: passwordTextField.myTextField.text!
+        )
     }
 }
 

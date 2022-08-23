@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserFromSession: Codable {
+struct UserData: Codable {
     let id: String
     let name: String
     let email: String
@@ -16,5 +16,5 @@ struct UserFromSession: Codable {
 
 struct UserSession: Codable {
     var token: String
-    let user: UserFromSession
+    let user: UserData
 }

@@ -9,4 +9,6 @@ import Foundation
 
 struct AppIdentifiers {
     static let bundleID = Bundle.main.bundleIdentifier!
+    static let textPostCell = "TextPostCell"
+    static let lorem = "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem orem lorem lorem lorem lorem"
 }

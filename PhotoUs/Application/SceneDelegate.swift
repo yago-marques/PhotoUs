@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let safeWindow = UIWindow(windowScene: windowScene)
         safeWindow.makeKeyAndVisible()
         safeWindow.frame = UIScreen.main.bounds
-        let myRootView = LoginViewController(viewModel: LoginViewModel())
+        let myRootView = LoginViewController(viewModel: LoginViewModel(api: API()))
         safeWindow.rootViewController = UINavigationController(rootViewController: myRootView)
         
         self.window = safeWindow

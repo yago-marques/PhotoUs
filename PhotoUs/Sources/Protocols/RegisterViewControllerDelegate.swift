@@ -8,5 +8,5 @@
 import UIKit
 
 protocol RegisterViewControllerDelegate: AnyObject {
-    func newUser(name: UITextField, email: UITextField, password: UITextField)
+    func newUser(name: String, email: String, password: String)
 }

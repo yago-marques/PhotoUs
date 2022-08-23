@@ -17,6 +17,8 @@
 		DF0231F128A286220038FB2B /* PhotoUsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0231F028A286220038FB2B /* PhotoUsTests.swift */; };
 		DF0231FB28A286220038FB2B /* PhotoUsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0231FA28A286220038FB2B /* PhotoUsUITests.swift */; };
 		DF0231FD28A286220038FB2B /* PhotoUsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0231FC28A286220038FB2B /* PhotoUsUITestsLaunchTests.swift */; };
+		DF0C0C4F28B4FB5600254B83 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C0C4E28B4FB5600254B83 /* Sequence.swift */; };
+		DF0C0C5128B51C0500254B83 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C0C5028B51C0500254B83 /* Date.swift */; };
 		DF508FCB28A3CA69003B7B0A /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */; };
 		DF5CB09628A3DE5200749DDC /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB09528A3DE5200749DDC /* UserSession.swift */; };
 		DF5CB09828A4336D00749DDC /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */; };
@@ -37,6 +39,17 @@
 		DFD9037328A2A258007446AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD9037228A2A258007446AC /* User.swift */; };
 		DFEA1D7A28AC2844006C8ECF /* RegisterViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */; };
 		DFEA1D8328AD7E26006C8ECF /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D8228AD7E26006C8ECF /* PostsViewController.swift */; };
+		DFEA1D8528AEBF61006C8ECF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D8428AEBF61006C8ECF /* MainTabBarController.swift */; };
+		DFEA1D8728AECE5D006C8ECF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D8628AECE5D006C8ECF /* ProfileViewController.swift */; };
+		DFEA1D8928AED05C006C8ECF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D8828AED05C006C8ECF /* NewPostViewController.swift */; };
+		DFEA1D8F28B3B6A8006C8ECF /* TextPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D8E28B3B6A8006C8ECF /* TextPostCell.swift */; };
+		DFEA1D9228B3E414006C8ECF /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D9128B3E414006C8ECF /* Float.swift */; };
+		DFEA1D9428B3E435006C8ECF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D9328B3E435006C8ECF /* Color.swift */; };
+		DFEA1D9828B3F185006C8ECF /* MainTabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D9728B3F185006C8ECF /* MainTabBarControllerDelegate.swift */; };
+		DFEA1D9A28B3F8DE006C8ECF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D9928B3F8DE006C8ECF /* Post.swift */; };
+		DFEA1D9C28B4218A006C8ECF /* LoginViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D9B28B4218A006C8ECF /* LoginViewModelDelegate.swift */; };
+		DFEA1D9E28B43AE0006C8ECF /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D9D28B43AE0006C8ECF /* PostViewModel.swift */; };
+		DFEA1DA028B44634006C8ECF /* PostsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA1D9F28B44634006C8ECF /* PostsViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +89,8 @@
 		DF0231F628A286220038FB2B /* PhotoUsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoUsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0231FA28A286220038FB2B /* PhotoUsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUsUITests.swift; sourceTree = "<group>"; };
 		DF0231FC28A286220038FB2B /* PhotoUsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DF0C0C4E28B4FB5600254B83 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		DF0C0C5028B51C0500254B83 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
 		DF5CB09528A3DE5200749DDC /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewModel.swift; path = PhotoUs/Sources/ViewModel/RegisterViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -96,6 +111,17 @@
 		DFD9037228A2A258007446AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewControllerDelegate.swift; sourceTree = "<group>"; };
 		DFEA1D8228AD7E26006C8ECF /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		DFEA1D8428AEBF61006C8ECF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DFEA1D8628AECE5D006C8ECF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DFEA1D8828AED05C006C8ECF /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		DFEA1D8E28B3B6A8006C8ECF /* TextPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPostCell.swift; sourceTree = "<group>"; };
+		DFEA1D9128B3E414006C8ECF /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		DFEA1D9328B3E435006C8ECF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DFEA1D9728B3F185006C8ECF /* MainTabBarControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerDelegate.swift; sourceTree = "<group>"; };
+		DFEA1D9928B3F8DE006C8ECF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DFEA1D9B28B4218A006C8ECF /* LoginViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDelegate.swift; sourceTree = "<group>"; };
+		DFEA1D9D28B43AE0006C8ECF /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		DFEA1D9F28B44634006C8ECF /* PostsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F996297208B3718BC651116A /* Pods-PhotoUs-PhotoUsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoUs-PhotoUsUITests/Pods-PhotoUs-PhotoUsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,9 +231,12 @@
 			isa = PBXGroup;
 			children = (
 				DF5CB0AD28AA874100749DDC /* Components */,
-				DFD9036C28A29B2C007446AC /* RegisterViewController.swift */,
 				DF5CB0AA28AA757700749DDC /* LoginViewController.swift */,
+				DFD9036C28A29B2C007446AC /* RegisterViewController.swift */,
+				DFEA1D8428AEBF61006C8ECF /* MainTabBarController.swift */,
 				DFEA1D8228AD7E26006C8ECF /* PostsViewController.swift */,
+				DFEA1D8628AECE5D006C8ECF /* ProfileViewController.swift */,
+				DFEA1D8828AED05C006C8ECF /* NewPostViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +247,9 @@
 				DF508FCA28A3CA69003B7B0A /* ViewCoding.swift */,
 				DF5CB0B228AABC9C00749DDC /* LoginViewControllerDelegate.swift */,
 				DFEA1D7928AC2844006C8ECF /* RegisterViewControllerDelegate.swift */,
+				DFEA1D9728B3F185006C8ECF /* MainTabBarControllerDelegate.swift */,
+				DFEA1D9B28B4218A006C8ECF /* LoginViewModelDelegate.swift */,
+				DFEA1D9F28B44634006C8ECF /* PostsViewControllerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -238,6 +270,7 @@
 				DF5CB0B028AAA81F00749DDC /* LoginFieldsComponent.swift */,
 				DF5CB0B428AADA9F00749DDC /* RegisterHeaderComponent.swift */,
 				DF5CB0B628AAEF2100749DDC /* RegisterFormComponent.swift */,
+				DFEA1D8E28B3B6A8006C8ECF /* TextPostCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -245,6 +278,7 @@
 		DF8B39BC28A328A800C3835D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DFEA1D9028B3E3F0006C8ECF /* Extensions */,
 				DF5CB09F28A69F6B00749DDC /* Enums */,
 				DF508FC928A3CA54003B7B0A /* Protocols */,
 				DFD9036E28A29B82007446AC /* Service */,
@@ -278,6 +312,7 @@
 			children = (
 				DF5CB09728A4336D00749DDC /* RegisterViewModel.swift */,
 				DF5CB0A428A6B32E00749DDC /* LoginViewModel.swift */,
+				DFEA1D9D28B43AE0006C8ECF /* PostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -297,8 +332,20 @@
 				DFD9037228A2A258007446AC /* User.swift */,
 				DF8B39C028A32B4E00C3835D /* APIQuery.swift */,
 				DF5CB09528A3DE5200749DDC /* UserSession.swift */,
+				DFEA1D9928B3F8DE006C8ECF /* Post.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DFEA1D9028B3E3F0006C8ECF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DFEA1D9128B3E414006C8ECF /* Float.swift */,
+				DFEA1D9328B3E435006C8ECF /* Color.swift */,
+				DF0C0C4E28B4FB5600254B83 /* Sequence.swift */,
+				DF0C0C5028B51C0500254B83 /* Date.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,18 +586,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFEA1D9E28B43AE0006C8ECF /* PostViewModel.swift in Sources */,
+				DFEA1D8F28B3B6A8006C8ECF /* TextPostCell.swift in Sources */,
 				DFD9036D28A29B2C007446AC /* RegisterViewController.swift in Sources */,
 				DF8B39C128A32B4E00C3835D /* APIQuery.swift in Sources */,
 				DF5CB0A928A6B54700749DDC /* AppIdentifiers.swift in Sources */,
 				DF5CB0B528AADA9F00749DDC /* RegisterHeaderComponent.swift in Sources */,
+				DF0C0C4F28B4FB5600254B83 /* Sequence.swift in Sources */,
 				DF5CB0AB28AA757700749DDC /* LoginViewController.swift in Sources */,
+				DFEA1DA028B44634006C8ECF /* PostsViewControllerDelegate.swift in Sources */,
 				DF5CB0AF28AA877F00749DDC /* CustomTextField.swift in Sources */,
+				DFEA1D8728AECE5D006C8ECF /* ProfileViewController.swift in Sources */,
+				DFEA1D8528AEBF61006C8ECF /* MainTabBarController.swift in Sources */,
+				DFEA1D9A28B3F8DE006C8ECF /* Post.swift in Sources */,
+				DFEA1D9428B3E435006C8ECF /* Color.swift in Sources */,
 				DF5CB0A328A6A34300749DDC /* KeychainEnums.swift in Sources */,
 				DF0231DA28A286220038FB2B /* AppDelegate.swift in Sources */,
+				DF0C0C5128B51C0500254B83 /* Date.swift in Sources */,
 				DF5CB0B128AAA81F00749DDC /* LoginFieldsComponent.swift in Sources */,
 				DFD9037028A29B91007446AC /* API.swift in Sources */,
 				DF508FCB28A3CA69003B7B0A /* ViewCoding.swift in Sources */,
 				DFD9037328A2A258007446AC /* User.swift in Sources */,
+				DFEA1D9828B3F185006C8ECF /* MainTabBarControllerDelegate.swift in Sources */,
+				DFEA1D8928AED05C006C8ECF /* NewPostViewController.swift in Sources */,
 				DF5CB0A128A69F8C00749DDC /* APIEnums.swift in Sources */,
 				DF5CB0A528A6B32E00749DDC /* LoginViewModel.swift in Sources */,
 				DF5CB0B728AAEF2100749DDC /* RegisterFormComponent.swift in Sources */,
@@ -558,9 +616,11 @@
 				DFEA1D8328AD7E26006C8ECF /* PostsViewController.swift in Sources */,
 				DF5CB09828A4336D00749DDC /* RegisterViewModel.swift in Sources */,
 				DF5CB0B328AABC9C00749DDC /* LoginViewControllerDelegate.swift in Sources */,
+				DFEA1D9C28B4218A006C8ECF /* LoginViewModelDelegate.swift in Sources */,
 				DF5CB09628A3DE5200749DDC /* UserSession.swift in Sources */,
 				DF5CB09C28A6985B00749DDC /* Keychain.swift in Sources */,
 				DFEA1D7A28AC2844006C8ECF /* RegisterViewControllerDelegate.swift in Sources */,
+				DFEA1D9228B3E414006C8ECF /* Float.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,7 @@ target 'PhotoUs' do
   use_frameworks!
 
   # Pods for PhotoUs
-pod "Gemini"
+  pod 'IQKeyboardManagerSwift'
 
   target 'PhotoUsTests' do
     inherit! :search_paths

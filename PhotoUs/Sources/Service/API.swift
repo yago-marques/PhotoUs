@@ -10,78 +10,37 @@ import UIKit
 // Adaptar pra testar!! Não será estatica
 
 final class API {
-            
-    // Mudar pra ser um POST que recebe URL (ou URLComponents), Header, Body, etc.
-    // Olhar como fazer nos testes!
-    static func postUser(user: User, callback: @escaping (Result<UserSession, APIError>) -> Void) {
-        guard let url = getUrl(path: "/users") else {
-            callback(.failure(.invalidURL))
-            return
-        }
-        
-        let body: Data = try! JSONEncoder().encode(user)
-        
-        let headers = [
-            "accept": "application/json",
-            "Content-Type": "application/json"
-        ]
-        
-        let request = getRequest(url: url, method: .post, headers: headers, body: body)
+    
+    func Post(
+        request: URLRequest,
+        callback: @escaping (Result<(Data?, URLResponse?, Error?), APIError>) -> Void
+    ) {
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            guard let data = data else {
-                callback(.failure(.network(error)))
-                return
-            }
-            
-            do {
-                let userSession = try JSONDecoder().decode(UserSession.self, from: data)
-                callback(.success(userSession))
-            } catch {
-                callback(.failure(.invalidEmail(error)))
-            }
-            
+            callback(.success((data, response, error)))
         }
         
         task.resume()
+
     }
     
-    static func login(email: String, password: String, callback: @escaping (Result<UserSession, APIError>) -> Void) {
+    func Get(request: URLRequest) async -> Data? {
         
-        guard let url = getUrl(path: "/users/login") else {
-            callback(.failure(.invalidURL))
-            return
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            return data
+        } catch {
+            print(error)
         }
         
-        var request = getRequest(url: url, method: .post)
-        let authData = (email + ":" + password).data(using: .utf8)!.base64EncodedString()
-        request.addValue("Basic \(authData)", forHTTPHeaderField: "Authorization")
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                callback(.failure(.network(error)))
-                return
-            }
-            
-            do {
-                let session = try JSONDecoder().decode(UserSession.self, from: data)
-                callback(.success(session))
-            } catch {
-                callback(.failure(.invalidEmail(error)))
-            }
-
-        }
-        
-        task.resume()
-        
+        return nil
     }
     
 }
 
-private extension API {
+extension API {
         
-    static private func getUrl(path: String, queries: [APIQuery] = []) -> URL? {
+    func getUrl(path: String, queries: [APIQuery] = []) -> URL? {
         guard var components = URLComponents(string: BaseURL.locally.rawValue) else {
             return nil
         }
@@ -101,10 +60,10 @@ private extension API {
         return components.url
     }
     
-    static private func getRequest(
+    func getRequest(
         url: URL,
         method: HTTPMethods = .get,
-        headers: [String: String] = ["accept": "application/json"],
+        headers: [String: String] = ["Content-Type": "application/json", "Accept": "application/json"],
         body: Data? = nil
     ) -> URLRequest {
         
